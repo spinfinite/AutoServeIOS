@@ -7,9 +7,9 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, AutoServeDelegate {
     
-    let api_manager = API_Manager()
+    var api_manager = API_Manager()
     
     @IBOutlet weak var makePicker: UIPickerView!
     
@@ -17,7 +17,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     @IBOutlet weak var yearPicker: UIPickerView!
     
-    var makePickerData = ["Honda", "Toyota", "Subaru", "Chevrolet", "Ford", "Tesla"]
+    var makePickerData = [MakeData]()
     
     var modelPickerData = ["Accord", "Siena", "Camaro", "F150", "Impressa"]
     
@@ -27,6 +27,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        
+        api_manager.delegate = self
         
         api_manager.fetchMake()
         
@@ -39,7 +41,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         self.yearPicker.delegate = self
         self.yearPicker.dataSource = self
         
-        makePicker.    }
+    }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -47,17 +49,17 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if pickerView.tag == 1 {
-            return makePickerData[component].count
+            return makePickerData.count
         } else if pickerView.tag == 2 {
-            return modelPickerData[component].count
+            return modelPickerData.count
         } else {
-            return yearPickerData[component].count
+            return yearPickerData.count
         }
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView.tag == 0 {
-            return makePickerData[row]
+            return ""
         } else if pickerView.tag == 1 {
             return modelPickerData[row]
         } else {
@@ -66,6 +68,10 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+    }
+    
+    func didReceiveMake(makes: [MakeData]) {
         
     }
     

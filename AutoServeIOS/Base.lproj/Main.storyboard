@@ -23,8 +23,8 @@
                                     <constraint firstAttribute="width" constant="100" id="kz7-Ry-Rlk"/>
                                 </constraints>
                             </imageView>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bSC-aD-mCB">
-                                <rect key="frame" x="37" y="354" width="320" height="100"/>
+                            <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bSC-aD-mCB">
+                                <rect key="frame" x="36.666666666666657" y="354" width="320" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="DHM-vb-2XO"/>
                                 </constraints>
@@ -38,8 +38,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QyQ-zs-18Z">
-                                <rect key="frame" x="37" y="516" width="320" height="100"/>
+                            <pickerView tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QyQ-zs-18Z">
+                                <rect key="frame" x="36.666666666666657" y="516" width="320" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="USi-Wj-TGH"/>
                                 </constraints>
@@ -50,8 +50,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VrB-yr-Mze">
-                                <rect key="frame" x="37" y="671" width="320" height="100"/>
+                            <pickerView tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VrB-yr-Mze">
+                                <rect key="frame" x="36.666666666666657" y="671" width="320" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="e1y-kX-cVw"/>
                                 </constraints>

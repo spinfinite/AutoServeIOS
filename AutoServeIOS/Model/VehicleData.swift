@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct MakeContainer: Decodable {
+struct MakeContainer: Codable {
     
     let Results: [MakeData]
     
 }
 
 
-struct MakeData: Decodable {
+struct MakeData: Codable {
     
     let Make_ID: Int
     let Make_Name: String

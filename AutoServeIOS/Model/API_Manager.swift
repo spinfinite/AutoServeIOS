@@ -7,9 +7,16 @@
 
 import Foundation
 
+protocol AutoServeDelegate {
+    
+    func didReceiveMake(makes: [MakeData])
+}
+
 struct API_Manager {
     
     let baseURL = "https://vpic.nhtsa.dot.gov/api/vehicles/"
+    
+    var delegate: AutoServeDelegate?
     
     func fetchMake() {
         let urlMakeString = "\(baseURL)getallmakes?format=json"
@@ -37,14 +44,19 @@ struct API_Manager {
         }
     }
     
-    func parseJSON(vehicleData: Data) {
+    func parseJSON(vehicleData: Data) -> [MakeData] {
         let decoder = JSONDecoder()
         do {
-            let decodedData = try
-            decoder.decode(MakeContainer.self, from: vehicleData)
+            let decodedData = try decoder.decode(MakeContainer.self, from: vehicleData)
+            let id = decodedData.Results[0].Make_ID
+            let makeName = decodedData.Results[0].Make_Name
+            
             print(decodedData)
+            
+            return decodedData.Results
         } catch {
             print(error)
+            return []
         }
     }
     
