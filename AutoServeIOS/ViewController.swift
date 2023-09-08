@@ -8,6 +8,8 @@
 import UIKit
 
 class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, AutoServeDelegate {
+
+    
     
     var api_manager = API_Manager()
     
@@ -58,9 +60,11 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if pickerView.tag == 0 {
-            return ""
-        } else if pickerView.tag == 1 {
+        if pickerView.tag == 1 {
+            let make = makePickerData[row]
+            return make.Make_Name
+            
+        } else if pickerView.tag == 2 {
             return modelPickerData[row]
         } else {
             return yearPickerData[row]
@@ -72,8 +76,14 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     }
     
     func didReceiveMake(makes: [MakeData]) {
+        makePickerData = makes
+        DispatchQueue.main.async {
+            self.makePicker.reloadAllComponents()
+        }
         
     }
-    
+    func didReceiveModel(models: [MakeData]) {
+        <#code#>
+    }
 }
 

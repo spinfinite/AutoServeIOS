@@ -8,16 +8,21 @@
 import Foundation
 
 struct MakeContainer: Codable {
-    
     let Results: [MakeData]
     
 }
 
-
 struct MakeData: Codable {
-    
     let Make_ID: Int
     let Make_Name: String
-    
-    
+
+}
+
+struct ModelContainer: Codable {
+    let Results: [ModelData]
+}
+
+struct ModelData: Codable {
+    let Make_ID: Int
+    let Model_Name: String
 }

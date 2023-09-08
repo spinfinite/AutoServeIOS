@@ -10,6 +10,7 @@ import Foundation
 protocol AutoServeDelegate {
     
     func didReceiveMake(makes: [MakeData])
+    func didReceiveModel(models: [ModelData])
 }
 
 struct API_Manager {
@@ -36,7 +37,8 @@ struct API_Manager {
                     return
                 }
                 if let safeData = data {
-                    self.parseJSON(vehicleData: safeData)
+                    let resultData = self.parseJSON(vehicleData: safeData)
+                    delegate?.didReceiveMake(makes: resultData)
                 }
             }
             // 4. Start the task
@@ -48,10 +50,6 @@ struct API_Manager {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(MakeContainer.self, from: vehicleData)
-            let id = decodedData.Results[0].Make_ID
-            let makeName = decodedData.Results[0].Make_Name
-            
-            print(decodedData)
             
             return decodedData.Results
         } catch {
