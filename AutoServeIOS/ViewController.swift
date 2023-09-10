@@ -8,8 +8,6 @@
 import UIKit
 
 class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, AutoServeDelegate {
-
-    
     
     var api_manager = API_Manager()
     
@@ -21,7 +19,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     var makePickerData = [MakeData]()
     
-    var modelPickerData = ["Accord", "Siena", "Camaro", "F150", "Impressa"]
+    var modelPickerData = [ModelData]()
     
     var yearPickerData = ["2023", "2022", "2021", "2020", "2019"]
     
@@ -33,6 +31,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         api_manager.delegate = self
         
         api_manager.fetchMake()
+        api_manager.fetchModel()
         
         self.makePicker.delegate = self
         self.makePicker.dataSource = self
@@ -65,7 +64,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             return make.Make_Name
             
         } else if pickerView.tag == 2 {
-            return modelPickerData[row]
+            let model = modelPickerData[row]
+            return model.Model_Name
+            
         } else {
             return yearPickerData[row]
         }
@@ -82,8 +83,11 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         }
         
     }
-    func didReceiveModel(models: [MakeData]) {
-        <#code#>
+    func didReceiveModel(models: [ModelData]) {
+        modelPickerData = models
+        DispatchQueue.main.async {
+            self.modelPicker.reloadAllComponents()
+        }
     }
 }
 
