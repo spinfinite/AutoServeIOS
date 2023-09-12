@@ -58,13 +58,14 @@ struct API_Manager {
         }
     }
     
-    func fetchModel() {
-        let urlModelString = "\(baseURL)GetModelsForMakeId/474?format=json"
+    func fetchModel(make: Int) {
+        let urlModelString = "\(baseURL)GetModelsForMakeID/\(make)?format=json"
         performRequest(urlModelString: urlModelString)
     }
     
     func performRequest(urlModelString: String) {
         // 1. Create URL
+        print(urlModelString)
         if let url = URL(string: urlModelString) {
             // 2. Create URL Session
             let session = URLSession(configuration: .default)
