@@ -11,6 +11,8 @@ protocol AutoServeDelegate {
     
     func didReceiveMake(makes: [MakeData])
     func didReceiveModel(models: [ModelData])
+    func didReceiveMakeYear(makesYears: [MakeYearData])
+
 }
 
 struct API_Manager {
@@ -90,6 +92,46 @@ struct API_Manager {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(ModelContainer.self, from: modelData)
+            
+            return decodedData.Results
+        } catch {
+            print(error)
+            return []
+        }
+    }
+
+    func fetchMakeYear(make: Int, year: Int) {
+        let urlMakeYearString = "\(baseURL)GetModelsForMakeIdYear/makeId/\(make)/modelyear/\(year)?format=json"
+        performRequest(urlModelString: urlMakeYearString)
+    }
+    
+    func performRequest(urlMakeYearString: String) {
+        // 1. Create URL
+        print(urlMakeYearString)
+        if let url = URL(string: urlMakeYearString) {
+            // 2. Create URL Session
+            let session = URLSession(configuration: .default)
+            // 3. Give URLSession a task
+            let task = session.dataTask(with: url) {
+                (data, URLResponse, error) in
+                if error != nil {
+                    print(error!)
+                    return
+                }
+                if let safeData = data {
+                    let makeYearResultData = self.parseJSON(makeYearData: safeData)
+                    delegate?.didReceiveMakeYear(makesYears: makeYearResultData)
+                }
+            }
+            // 4. Start the task
+            task.resume()
+        }
+    }
+    
+    func parseJSON(makeYearData: Data) -> [MakeYearData] {
+        let decoder = JSONDecoder()
+        do {
+            let decodedData = try decoder.decode(MakeYearContainer.self, from: makeYearData)
             
             return decodedData.Results
         } catch {

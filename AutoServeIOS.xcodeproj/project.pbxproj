@@ -19,6 +19,7 @@
 		8E8330852A9F0CAD00AEB7BA /* AutoServeIOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8330842A9F0CAD00AEB7BA /* AutoServeIOSUITestsLaunchTests.swift */; };
 		8E8330922AA2094500AEB7BA /* API_Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8330912AA2094500AEB7BA /* API_Manager.swift */; };
 		8E8330952AA215FF00AEB7BA /* VehicleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8330942AA215FF00AEB7BA /* VehicleData.swift */; };
+		8ECDAB852AB232C0007B6B96 /* DisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECDAB842AB232C0007B6B96 /* DisplayViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		8E8330842A9F0CAD00AEB7BA /* AutoServeIOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoServeIOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8E8330912AA2094500AEB7BA /* API_Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API_Manager.swift; sourceTree = "<group>"; };
 		8E8330942AA215FF00AEB7BA /* VehicleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleData.swift; sourceTree = "<group>"; };
+		8ECDAB842AB232C0007B6B96 /* DisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,10 +107,10 @@
 		8E83305D2A9F0CAA00AEB7BA /* AutoServeIOS */ = {
 			isa = PBXGroup;
 			children = (
+				8ECDAB832AB23282007B6B96 /* ViewControllers */,
 				8E8330932AA2095300AEB7BA /* Model */,
 				8E83305E2A9F0CAA00AEB7BA /* AppDelegate.swift */,
 				8E8330602A9F0CAA00AEB7BA /* SceneDelegate.swift */,
-				8E8330622A9F0CAA00AEB7BA /* ViewController.swift */,
 				8E8330642A9F0CAA00AEB7BA /* Main.storyboard */,
 				8E83306A2A9F0CAD00AEB7BA /* Assets.xcassets */,
 				8E83306C2A9F0CAD00AEB7BA /* LaunchScreen.storyboard */,
@@ -142,6 +144,15 @@
 				8E8330942AA215FF00AEB7BA /* VehicleData.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		8ECDAB832AB23282007B6B96 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8E8330622A9F0CAA00AEB7BA /* ViewController.swift */,
+				8ECDAB842AB232C0007B6B96 /* DisplayViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E8330632A9F0CAA00AEB7BA /* ViewController.swift in Sources */,
+				8ECDAB852AB232C0007B6B96 /* DisplayViewController.swift in Sources */,
 				8E83305F2A9F0CAA00AEB7BA /* AppDelegate.swift in Sources */,
 				8E8330952AA215FF00AEB7BA /* VehicleData.swift in Sources */,
 				8E8330922AA2094500AEB7BA /* API_Manager.swift in Sources */,

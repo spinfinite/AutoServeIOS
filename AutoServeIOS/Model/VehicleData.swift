@@ -26,3 +26,13 @@ struct ModelData: Codable {
     let Make_ID: Int
     let Model_Name: String
 }
+
+struct MakeYearContainer: Codable {
+    let Results: [MakeYearData]
+}
+
+struct MakeYearData: Codable {
+    let Make_ID: Int
+    let Make_Name: String
+    let Model_Name: String
+}

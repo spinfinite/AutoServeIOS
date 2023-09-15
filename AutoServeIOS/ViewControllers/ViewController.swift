@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, AutoServeDelegate {
-    
+
     var api_manager = API_Manager()
     
     @IBOutlet weak var makePicker: UIPickerView!
@@ -17,11 +17,19 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     @IBOutlet weak var yearPicker: UIPickerView!
     
+    @IBAction func didTapSubmit(_ sender: Any) {
+        
+        var makeSelected = makePicker.selectedRow(inComponent: 0)
+        var valueSelected = makePickerData[makeSelected]
+        print(valueSelected)
+    }
     var makePickerData = [MakeData]()
     
     var modelPickerData = [ModelData]()
     
     var yearPickerData = ["1981","1982","1983","1984","1985","1986","1987","1988","1989","1990","1991","1992","1993","1994","1995","1996","1997","1998","1999","2000","2001","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022","2023"]
+    
+    var makeYearData = [MakeYearData]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,6 +91,10 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         } else if pickerView.tag == 2 {
 
             let model = modelPickerData[row]
+            print(model.Model_Name)
+        } else if pickerView.tag == 3 {
+            let year = yearPickerData[row]
+            print(year)
         }
         
     }
@@ -101,7 +113,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         }
     }
     
-    
+    func didReceiveMakeYear(makesYears: [MakeYearData]) {
+        print(makesYears)
+    }
     
 }
 
