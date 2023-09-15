@@ -100,7 +100,7 @@ struct API_Manager {
 //        }
 //    }
 
-    func fetchMakeYear(make: Int, year: Int) {
+    func fetchMakeYear(make: Int, year: String) {
         let urlMakeYearString = "\(baseURL)GetModelsForMakeIdYear/makeId/\(make)/modelyear/\(year)?format=json"
         performRequest(urlMakeYearString: urlMakeYearString)
     }

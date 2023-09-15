@@ -19,9 +19,16 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     @IBAction func didTapSubmit(_ sender: Any) {
         
-        var makeSelected = makePicker.selectedRow(inComponent: 0)
-        var valueSelected = makePickerData[makeSelected]
-        print(valueSelected)
+        let makeSelected = makePicker.selectedRow(inComponent: 0)
+        let makeValueSelected = makePickerData[makeSelected]
+  
+        let yearSelected = yearPicker.selectedRow(inComponent: 0)
+        let yearValueSelected = yearPickerData[yearSelected]
+        
+        print("The make and year selected were the following make: \(makeValueSelected) year: \(yearValueSelected)")
+        
+        api_manager.fetchMakeYear(make: makeValueSelected.Make_ID, year: yearValueSelected)
+        
     }
     var makePickerData = [MakeData]()
     
@@ -115,6 +122,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     func didReceiveMakeYear(makesYears: [MakeYearData]) {
         print(makesYears)
+        
+       
     }
     
 }
