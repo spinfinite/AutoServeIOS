@@ -24,31 +24,19 @@
                                 </constraints>
                             </imageView>
                             <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bSC-aD-mCB">
-                                <rect key="frame" x="36.666666666666657" y="329" width="320" height="136.33333333333337"/>
-                            </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Choose the Model" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="urJ-ZC-Mad">
-                                <rect key="frame" x="99.666666666666671" y="490.33333333333331" width="193.66666666666663" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="Zbc-Yv-yXb"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <pickerView tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QyQ-zs-18Z">
-                                <rect key="frame" x="36.666666666666657" y="527.33333333333337" width="320" height="119.33333333333337"/>
+                                <rect key="frame" x="36.666666666666657" y="342" width="320" height="136.33333333333337"/>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Choose the Year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jin-XJ-PQk">
-                                <rect key="frame" x="106.66666666666669" y="663.66666666666663" width="180" height="21"/>
+                                <rect key="frame" x="106.66666666666669" y="498.33333333333331" width="180" height="20.999999999999943"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VrB-yr-Mze">
-                                <rect key="frame" x="36.666666666666657" y="701.66666666666663" width="320" height="85"/>
+                                <rect key="frame" x="36.666666666666657" y="536.33333333333337" width="320" height="85.333333333333371"/>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NXP-nZ-2ia">
-                                <rect key="frame" x="157.66666666666666" y="806.66666666666663" width="78" height="35"/>
+                                <rect key="frame" x="157.66666666666666" y="641.66666666666663" width="78" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Submit"/>
                                 <connections>
@@ -56,7 +44,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Choose you Vehicle's Make" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eoJ-P7-Bj3">
-                                <rect key="frame" x="65" y="292" width="263" height="20"/>
+                                <rect key="frame" x="65" y="305" width="263" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="iD1-mG-gEs"/>
                                 </constraints>
@@ -73,21 +61,16 @@
                         <constraints>
                             <constraint firstItem="bSC-aD-mCB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4qW-cK-pyL"/>
                             <constraint firstItem="bSC-aD-mCB" firstAttribute="top" secondItem="eoJ-P7-Bj3" secondAttribute="bottom" constant="17" id="4x1-Ce-0p7"/>
-                            <constraint firstItem="QyQ-zs-18Z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7zY-DE-5Vy"/>
                             <constraint firstItem="VrB-yr-Mze" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8L9-cM-34C"/>
-                            <constraint firstItem="urJ-ZC-Mad" firstAttribute="top" secondItem="bSC-aD-mCB" secondAttribute="bottom" constant="25" id="AHY-C9-98v"/>
-                            <constraint firstItem="urJ-ZC-Mad" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HHt-Ih-H6v"/>
                             <constraint firstItem="Ndi-Yf-2QU" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.176056" id="KQO-w3-gDa"/>
                             <constraint firstItem="VrB-yr-Mze" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.1" id="MCW-Q5-d8h"/>
+                            <constraint firstItem="jin-XJ-PQk" firstAttribute="top" secondItem="bSC-aD-mCB" secondAttribute="bottom" constant="20" id="MMg-Vg-I7C"/>
                             <constraint firstItem="eoJ-P7-Bj3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NZu-HL-ftA"/>
                             <constraint firstItem="CQo-pC-bfo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="50" id="O0K-Fr-vvr"/>
                             <constraint firstItem="NXP-nZ-2ia" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QG5-3B-pKH"/>
                             <constraint firstItem="CQo-pC-bfo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VsO-Zc-VHn"/>
-                            <constraint firstItem="eoJ-P7-Bj3" firstAttribute="top" secondItem="Ndi-Yf-2QU" secondAttribute="bottom" constant="7" id="XGd-co-Hn1"/>
-                            <constraint firstItem="jin-XJ-PQk" firstAttribute="top" secondItem="QyQ-zs-18Z" secondAttribute="bottom" constant="17" id="a1d-Xw-H1C"/>
-                            <constraint firstItem="QyQ-zs-18Z" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.14" id="anr-bU-ofk"/>
+                            <constraint firstItem="eoJ-P7-Bj3" firstAttribute="top" secondItem="Ndi-Yf-2QU" secondAttribute="bottom" constant="20" id="XGd-co-Hn1"/>
                             <constraint firstItem="Ndi-Yf-2QU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bCT-8S-RbJ"/>
-                            <constraint firstItem="QyQ-zs-18Z" firstAttribute="top" secondItem="urJ-ZC-Mad" secondAttribute="bottom" constant="17" id="bhe-Zl-bOu"/>
                             <constraint firstItem="CQo-pC-bfo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="50" id="cDK-Z9-AUg"/>
                             <constraint firstItem="bSC-aD-mCB" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.16" id="cZq-2L-fU5"/>
                             <constraint firstItem="NXP-nZ-2ia" firstAttribute="top" secondItem="VrB-yr-Mze" secondAttribute="bottom" constant="20" id="h6B-yt-kjq"/>
@@ -98,7 +81,6 @@
                     </view>
                     <connections>
                         <outlet property="makePicker" destination="bSC-aD-mCB" id="ZGX-ux-Sxa"/>
-                        <outlet property="modelPicker" destination="QyQ-zs-18Z" id="kaj-vY-nZB"/>
                         <outlet property="yearPicker" destination="VrB-yr-Mze" id="amO-Yb-c3o"/>
                     </connections>
                 </viewController>
