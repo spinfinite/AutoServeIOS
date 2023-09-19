@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="l3t-OS-Xyd">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -79,6 +79,7 @@
                             <constraint firstItem="Ndi-Yf-2QU" firstAttribute="top" secondItem="CQo-pC-bfo" secondAttribute="bottom" constant="10" id="rA0-SN-WMs"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Pox-LO-hJn"/>
                     <connections>
                         <outlet property="makePicker" destination="bSC-aD-mCB" id="ZGX-ux-Sxa"/>
                         <outlet property="yearPicker" destination="VrB-yr-Mze" id="amO-Yb-c3o"/>
@@ -86,22 +87,76 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-144.27480916030532" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="782.44274809160299" y="3.5211267605633805"/>
         </scene>
-        <!--View Controller-->
+        <!--Display View Controller-->
         <scene sceneID="H1J-1s-ABB">
             <objects>
-                <viewController id="wFu-tm-GKg" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DisplayID" id="wFu-tm-GKg" customClass="DisplayViewController" customModule="AutoServeIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pff-vS-ZUF">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="AutoServeLogo" translatesAutoresizingMaskIntoConstraints="NO" id="pJF-i7-rEP">
+                                <rect key="frame" x="0.0" y="95" width="132" height="141"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="HzD-Ds-8cN"/>
+                                    <constraint firstAttribute="width" constant="75" id="son-hN-pKT"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pilot" translatesAutoresizingMaskIntoConstraints="NO" id="VuG-cH-4pt">
+                                <rect key="frame" x="131" y="96" width="262" height="140"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Models for Make and Year Desired" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QnZ-MQ-yrp">
+                                <rect key="frame" x="55" y="257" width="283" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Zt7-rQ-IYo">
+                                <rect key="frame" x="34" y="378" width="325" height="429"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MakeAndYear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="raj-u9-6ce">
+                                <rect key="frame" x="66" y="298" width="260" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="aDS-PU-5lK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="displayModelsForMakeAndYear" destination="raj-u9-6ce" id="24X-W1-OLC"/>
+                        <outlet property="modelsAndMakesTitle" destination="QnZ-MQ-yrp" id="N7u-K1-yAb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="grt-We-5Ay" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="679" y="4"/>
+            <point key="canvasLocation" x="1600.7633587786258" y="3.5211267605633805"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="vyr-Ys-TZm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="l3t-OS-Xyd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wHG-Tx-ZnN">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="HQ8-45-ohR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="atz-uu-19X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-144.27480916030532" y="3.5211267605633805"/>
         </scene>
     </scenes>
     <resources>

@@ -28,10 +28,10 @@ struct ModelData: Codable {
 }
 
 struct MakeYearContainer: Codable {
-    let Results: [MakeYearData]
+    let Results: [VehicleInfo]
 }
 
-struct MakeYearData: Codable {
+struct VehicleInfo: Codable {
     let Make_ID: Int
     let Make_Name: String
     let Model_Name: String

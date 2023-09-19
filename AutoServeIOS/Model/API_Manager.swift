@@ -11,7 +11,7 @@ protocol AutoServeDelegate {
     
     func didReceiveMake(makes: [MakeData])
 //    func didReceiveModel(models: [ModelData])
-    func didReceiveMakeYear(makesYears: [MakeYearData])
+    func didReceiveVehicleInfo(vehicleInfo: [VehicleInfo])
 
 }
 
@@ -119,8 +119,8 @@ struct API_Manager {
                     return
                 }
                 if let safeData = data {
-                    let makeYearResultData = self.parseJSON(makeYearData: safeData)
-                    delegate?.didReceiveMakeYear(makesYears: makeYearResultData)
+                    let vehicleInfo = self.parseJSON(vehicleInfo: safeData)
+                    delegate?.didReceiveVehicleInfo(vehicleInfo: vehicleInfo)
                 }
             }
             // 4. Start the task
@@ -128,10 +128,10 @@ struct API_Manager {
         }
     }
     
-    func parseJSON(makeYearData: Data) -> [MakeYearData] {
+    func parseJSON(vehicleInfo: Data) -> [VehicleInfo] {
         let decoder = JSONDecoder()
         do {
-            let decodedData = try decoder.decode(MakeYearContainer.self, from: makeYearData)
+            let decodedData = try decoder.decode(MakeYearContainer.self, from: vehicleInfo)
             
             return decodedData.Results
         } catch {
