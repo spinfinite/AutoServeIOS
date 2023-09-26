@@ -30,6 +30,8 @@ class DisplayViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         configureTableView()
         
+        (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
     }
     
     
@@ -52,10 +54,12 @@ class DisplayViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     
-    
-    
-    
-    
-    
-    
+    @IBAction func addToFavoritesButton(_ sender: Any) {
+        
+        print("This where favorites will be")
+        //create tab bar controller
+        
+                
+    }
+
 }
