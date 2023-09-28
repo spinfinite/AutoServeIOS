@@ -126,15 +126,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ONB-0o-Xfh">
-                                <rect key="frame" x="122" y="690" width="148" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Add to Favorites"/>
-                                <connections>
-                                    <action selector="addToFavoritesButton:" destination="wFu-tm-GKg" eventType="touchUpInside" id="B5e-aB-FFf"/>
-                                </connections>
-                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AutoServeLogo" translatesAutoresizingMaskIntoConstraints="NO" id="pJF-i7-rEP">
                                 <rect key="frame" x="159" y="73" width="75" height="75"/>
                                 <constraints>

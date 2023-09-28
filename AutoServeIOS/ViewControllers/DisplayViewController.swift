@@ -18,6 +18,7 @@ class DisplayViewController: UIViewController, UITableViewDelegate, UITableViewD
     var make = ""
     var modelNames = [String]()
     
+    var coreData = CoreDataManager.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +31,7 @@ class DisplayViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         configureTableView()
         
-        (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
         
     }
     
@@ -48,18 +49,20 @@ class DisplayViewController: UIViewController, UITableViewDelegate, UITableViewD
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+
+        print("The make is \(make), the model is \(modelNames[indexPath.row])) and the year is \(year)")
+        coreData.addVehicle(make: make, model: modelNames[indexPath.row], year: year)
+        
+    }
+    
     func configureTableView() {
         displayModelsTableView.dataSource = self
         displayModelsTableView.delegate = self
     }
     
     
-    @IBAction func addToFavoritesButton(_ sender: Any) {
-        
-        print("This where favorites will be")
-        //create tab bar controller
-        
-                
-    }
+
 
 }
