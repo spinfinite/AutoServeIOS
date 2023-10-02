@@ -29,7 +29,7 @@ class CoreDataManager {
         vehicle.year = year
         saveContext()
     }
-
+    
     
     func saveContext () {
         let context = persistentContainer.viewContext
@@ -42,6 +42,18 @@ class CoreDataManager {
                 let nserror = error as NSError
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
+        }
+    }
+    func fetchFavoriteVehicles() -> [Vehicle] {
+        
+        let fetchFavoritesRequest = NSFetchRequest<Vehicle>()
+            print(fetchFavoritesRequest)
+        
+        do {
+            return try persistentContainer.viewContext.fetch(fetchFavoritesRequest)
+            
+        } catch {
+            return []
         }
     }
 }

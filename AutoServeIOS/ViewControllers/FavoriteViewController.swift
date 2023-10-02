@@ -9,6 +9,9 @@ import UIKit
 
 class FavoriteViewController: UIViewController {
     
+    let coreData = CoreDataManager.shared
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

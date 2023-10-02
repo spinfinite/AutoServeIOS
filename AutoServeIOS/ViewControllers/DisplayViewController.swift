@@ -31,7 +31,7 @@ class DisplayViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         configureTableView()
         
-        
+        print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
         
     }
     
@@ -62,7 +62,7 @@ class DisplayViewController: UIViewController, UITableViewDelegate, UITableViewD
         displayModelsTableView.delegate = self
     }
     
-    
+
 
 
 }
