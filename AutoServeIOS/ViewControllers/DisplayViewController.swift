@@ -55,6 +55,7 @@ class DisplayViewController: UIViewController, UITableViewDelegate, UITableViewD
         print("The make is \(make), the model is \(modelNames[indexPath.row])) and the year is \(year)")
         coreData.addVehicle(make: make, model: modelNames[indexPath.row], year: year)
         
+        
     }
     
     func configureTableView() {

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8E67018D2AC20DE900E080D8 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E67018C2AC20DE900E080D8 /* FavoriteViewController.swift */; };
 		8E6701972AC368BC00E080D8 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6701962AC368BC00E080D8 /* CoreDataManager.swift */; };
+		8E6701992ACC9CB200E080D8 /* FavoritesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6701982ACC9CB200E080D8 /* FavoritesCell.swift */; };
 		8E83305F2A9F0CAA00AEB7BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E83305E2A9F0CAA00AEB7BA /* AppDelegate.swift */; };
 		8E8330612A9F0CAA00AEB7BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8330602A9F0CAA00AEB7BA /* SceneDelegate.swift */; };
 		8E8330632A9F0CAA00AEB7BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8330622A9F0CAA00AEB7BA /* ViewController.swift */; };
@@ -44,6 +45,7 @@
 /* Begin PBXFileReference section */
 		8E67018C2AC20DE900E080D8 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		8E6701962AC368BC00E080D8 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		8E6701982ACC9CB200E080D8 /* FavoritesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCell.swift; sourceTree = "<group>"; };
 		8E83305B2A9F0CAA00AEB7BA /* AutoServeIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoServeIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E83305E2A9F0CAA00AEB7BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E8330602A9F0CAA00AEB7BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,14 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		8E67019A2ACC9CBF00E080D8 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8E6701982ACC9CB200E080D8 /* FavoritesCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		8E8330522A9F0CAA00AEB7BA = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +129,7 @@
 		8E83305D2A9F0CAA00AEB7BA /* AutoServeIOS */ = {
 			isa = PBXGroup;
 			children = (
+				8E67019A2ACC9CBF00E080D8 /* Cells */,
 				8E6701952AC367C600E080D8 /* Managers */,
 				8ECDAB832AB23282007B6B96 /* ViewControllers */,
 				8E8330932AA2095300AEB7BA /* Model */,
@@ -303,6 +314,7 @@
 				8E8330632A9F0CAA00AEB7BA /* ViewController.swift in Sources */,
 				8ECDAB852AB232C0007B6B96 /* DisplayViewController.swift in Sources */,
 				8E83305F2A9F0CAA00AEB7BA /* AppDelegate.swift in Sources */,
+				8E6701992ACC9CB200E080D8 /* FavoritesCell.swift in Sources */,
 				8E8330952AA215FF00AEB7BA /* VehicleData.swift in Sources */,
 				8E8330922AA2094500AEB7BA /* API_Manager.swift in Sources */,
 				8E8330692A9F0CAA00AEB7BA /* AutoServeIOS.xcdatamodeld in Sources */,
