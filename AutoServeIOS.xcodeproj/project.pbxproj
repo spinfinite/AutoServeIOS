@@ -173,9 +173,9 @@
 		8ECDAB832AB23282007B6B96 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				8E67018C2AC20DE900E080D8 /* FavoriteViewController.swift */,
 				8E8330622A9F0CAA00AEB7BA /* ViewController.swift */,
 				8ECDAB842AB232C0007B6B96 /* DisplayViewController.swift */,
+				8E67018C2AC20DE900E080D8 /* FavoriteViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";

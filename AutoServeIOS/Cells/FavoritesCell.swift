@@ -15,5 +15,6 @@ class FavoritesCell: UITableViewCell {
     @IBOutlet weak var modelLabel: UILabel!
     
     @IBOutlet weak var yearLabel: UILabel!
+
     
 }

@@ -37,6 +37,7 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "favoriteCells", for: indexPath)
         cell.textLabel?.text = favoriteVehicles[indexPath.row].make
+        print(cell)
         return cell
     }
     
