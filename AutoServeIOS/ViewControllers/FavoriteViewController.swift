@@ -35,10 +35,16 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "favoriteCells", for: indexPath)
-        cell.textLabel?.text = favoriteVehicles[indexPath.row].make
-        print(cell)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "favoriteCells", for: indexPath) as! FavoritesCell
+        cell.makeLabel.text = favoriteVehicles[indexPath.row].make
+        cell.modelLabel.text = favoriteVehicles[indexPath.row].vehicleModel
+        cell.yearLabel.text = favoriteVehicles[indexPath.row].year
+        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
     
     func configureTableView() {

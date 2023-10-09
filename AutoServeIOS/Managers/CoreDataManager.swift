@@ -46,7 +46,7 @@ class CoreDataManager {
     }
     func fetchFavoriteVehicles() -> [Vehicle] {
         
-        let fetchFavoritesRequest = NSFetchRequest<Vehicle>()
+        let fetchFavoritesRequest = NSFetchRequest<Vehicle>(entityName: "Vehicle")
             print(fetchFavoritesRequest)
         
         do {
