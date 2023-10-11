@@ -19,7 +19,7 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
     
     var favoriteVehicles = [Vehicle]()
 
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         
