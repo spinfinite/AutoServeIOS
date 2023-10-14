@@ -30,6 +30,12 @@ class CoreDataManager {
         saveContext()
     }
     
+    func deleteVehicle(make: String, model: String, year: String) {
+        
+        let deleteVehicle = Vehicle(context: persistentContainer.viewContext)
+        
+        
+    }
     
     func saveContext () {
         let context = persistentContainer.viewContext
