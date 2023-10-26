@@ -23,8 +23,15 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        favoriteVehicles = coreData.fetchFavoriteVehicles()
         configureTableView()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        favoriteVehicles = coreData.fetchFavoriteVehicles()
+        FavoritesTableView.reloadData()
         
     }
     
@@ -46,6 +53,25 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let vehicle = favoriteVehicles[indexPath.row]
+        
+        return UISwipeActionsConfiguration(actions: [UIContextualAction(style: .destructive, title: "unfavorite", handler: {_,_,done in
+            self.coreData.deleteVehicle(vehicle: vehicle)
+            
+            self.favoriteVehicles = self.coreData.fetchFavoriteVehicles()
+            self.FavoritesTableView.beginUpdates()
+            self.FavoritesTableView.deleteRows(at: [indexPath], with: .automatic)
+            self.FavoritesTableView.endUpdates()
+            
+            done(true)
+            })
+                                                    
+        ])
+    }
+    
     
     func configureTableView() {
         FavoritesTableView.dataSource = self
