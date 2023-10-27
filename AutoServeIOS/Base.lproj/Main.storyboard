@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Results-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AutoServeIOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -23,18 +23,14 @@
                                     <constraint firstAttribute="width" constant="75" id="kz7-Ry-Rlk"/>
                                 </constraints>
                             </imageView>
-                            <pickerView tag="1" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bSC-aD-mCB">
-                                <rect key="frame" x="36.666666666666657" y="383" width="320" height="44"/>
-                                <color key="backgroundColor" red="0.91764705879999997" green="0.97254901959999995" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Please Choose the Year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jin-XJ-PQk">
-                                <rect key="frame" x="106.66666666666669" y="448" width="180" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Please Choose the Year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jin-XJ-PQk">
+                                <rect key="frame" x="106" y="532" width="180" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Please Choose you Vehicle's Make" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eoJ-P7-Bj3">
-                                <rect key="frame" x="65" y="352" width="263" height="31"/>
+                                <rect key="frame" x="65" y="390" width="263" height="31"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -51,9 +47,21 @@
                                 </connections>
                             </button>
                             <pickerView tag="3" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VrB-yr-Mze">
-                                <rect key="frame" x="36.666666666666629" y="548" width="320" height="172"/>
+                                <rect key="frame" x="37" y="583" width="320" height="137"/>
                                 <color key="backgroundColor" red="0.91764705879999997" green="0.97254901959999995" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </pickerView>
+                            <pickerView tag="1" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bSC-aD-mCB">
+                                <rect key="frame" x="36" y="464" width="320" height="44"/>
+                                <color key="backgroundColor" red="0.91764705879999997" green="0.97254901959999995" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pickerView>
+                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Enter Vehicle's Make" translatesAutoresizingMaskIntoConstraints="NO" id="mEM-fz-bMX">
+                                <rect key="frame" x="0.0" y="346" width="393" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="YTi-Ft-K3m"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -76,12 +84,13 @@
                             <constraint firstItem="eoJ-P7-Bj3" firstAttribute="top" secondItem="Ndi-Yf-2QU" secondAttribute="bottom" constant="10" id="xfC-lR-6HI"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="qeq-5P-yEv"/>
+                    <tabBarItem key="tabBarItem" title="Results" id="qeq-5P-yEv"/>
                     <navigationItem key="navigationItem" id="Pox-LO-hJn"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="makePicker" destination="bSC-aD-mCB" id="ZGX-ux-Sxa"/>
                         <outlet property="pilotImageView" destination="Ndi-Yf-2QU" id="eaJ-Xx-jHA"/>
+                        <outlet property="searchForMake" destination="mEM-fz-bMX" id="ptk-AY-5QY"/>
                         <outlet property="yearPicker" destination="VrB-yr-Mze" id="amO-Yb-c3o"/>
                     </connections>
                 </viewController>
@@ -89,7 +98,7 @@
             </objects>
             <point key="canvasLocation" x="681.67938931297704" y="517.6056338028169"/>
         </scene>
-        <!--Item-->
+        <!--Search-->
         <scene sceneID="H1J-1s-ABB">
             <objects>
                 <viewController storyboardIdentifier="DisplayID" id="wFu-tm-GKg" customClass="DisplayViewController" customModule="AutoServeIOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -141,7 +150,7 @@
                             <constraint firstItem="aDS-PU-5lK" firstAttribute="bottom" secondItem="Zt7-rQ-IYo" secondAttribute="bottom" id="xw4-Hb-KQe"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="star" catalog="system" id="b16-XW-mjI"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="star" catalog="system" id="b16-XW-mjI"/>
                     <connections>
                         <outlet property="displayModelsForMakeAndYear" destination="QnZ-MQ-yrp" id="IL8-cU-pcd"/>
                         <outlet property="displayModelsTableView" destination="Zt7-rQ-IYo" id="8h9-b5-qwF"/>
@@ -158,7 +167,7 @@
             </objects>
             <point key="canvasLocation" x="1437" y="518"/>
         </scene>
-        <!--Item-->
+        <!--Favorites-->
         <scene sceneID="V9o-6L-H4s">
             <objects>
                 <viewController id="egn-ch-SEr" customClass="FavoriteViewController" customModule="AutoServeIOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -245,7 +254,7 @@
                             <constraint firstItem="QcT-9z-NEN" firstAttribute="top" secondItem="DSy-z8-gAc" secondAttribute="top" id="x5D-cC-X43"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="1k2-d1-HFg"/>
+                    <tabBarItem key="tabBarItem" title="Favorites" image="star.circle.fill" catalog="system" id="1k2-d1-HFg"/>
                     <connections>
                         <outlet property="AutoServeLogo" destination="QcT-9z-NEN" id="alH-e0-04G"/>
                         <outlet property="FavoriteModelsLabel" destination="IMr-Ve-u2x" id="I75-Lh-Seo"/>
@@ -256,11 +265,11 @@
             </objects>
             <point key="canvasLocation" x="2258.7786259541986" y="517.6056338028169"/>
         </scene>
-        <!--Item-->
+        <!--Search-->
         <scene sceneID="vyr-Ys-TZm">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="l3t-OS-Xyd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="4tg-TH-Yis"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="questionmark.bubble" catalog="system" id="4tg-TH-Yis"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wHG-Tx-ZnN">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -298,7 +307,9 @@
     <resources>
         <image name="AutoServeLogo" width="166" height="166"/>
         <image name="pilot" width="914" height="317.33334350585938"/>
+        <image name="questionmark.bubble" catalog="system" width="128" height="110"/>
         <image name="star" catalog="system" width="128" height="116"/>
+        <image name="star.circle.fill" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

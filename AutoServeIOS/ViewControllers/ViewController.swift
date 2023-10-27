@@ -7,12 +7,16 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, AutoServeDelegate {
+class ViewController: UIViewController, UIPickerViewDataSource,UISearchBarDelegate, UIPickerViewDelegate, AutoServeDelegate {
+    
+    
     
     var api_manager = API_Manager()
     
     
     @IBOutlet weak var pilotImageView: UIImageView!
+
+    @IBOutlet weak var searchForMake: UISearchBar!
     
     @IBOutlet weak var makePicker: UIPickerView!
     
@@ -21,6 +25,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBOutlet weak var yearPicker: UIPickerView!
     
     @IBAction func didTapSubmit(_ sender: Any) {
+        
+        let makeSearched = searchForMake.selectedScopeButtonIndex
+        print(makeSearched)
         
         let makeSelected = makePicker.selectedRow(inComponent: 0)
         let makeValueSelected = makePickerData[makeSelected]
@@ -34,6 +41,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
     }
     var makePickerData = [MakeData]()
+    var makeSearchBarData = [MakeData]()
     
     //    var modelPickerData = [ModelData]()
     
@@ -50,17 +58,30 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
         api_manager.fetchMake()
         
+        self.searchForMake.delegate = self
+
+        
         self.makePicker.delegate = self
         self.makePicker.dataSource = self
         
         //        self.modelPicker.delegate = self
         //        self.modelPicker.dataSource = self
         
+        
+        
         self.yearPicker.delegate = self
         self.yearPicker.dataSource = self
         
         pilotImageView.heightAnchor.constraint(equalToConstant:pilotImageView.contentClippingRect.height).isActive = true
         
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard !searchText.isEmpty else {
+        
+            print(makeSearchBarData)
+            return
+        }
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
