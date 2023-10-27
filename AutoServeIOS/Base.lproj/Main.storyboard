@@ -54,14 +54,6 @@
                                 <rect key="frame" x="36" y="464" width="320" height="44"/>
                                 <color key="backgroundColor" red="0.91764705879999997" green="0.97254901959999995" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </pickerView>
-                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Enter Vehicle's Make" translatesAutoresizingMaskIntoConstraints="NO" id="mEM-fz-bMX">
-                                <rect key="frame" x="0.0" y="346" width="393" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="YTi-Ft-K3m"/>
-                                </connections>
-                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -90,7 +82,6 @@
                     <connections>
                         <outlet property="makePicker" destination="bSC-aD-mCB" id="ZGX-ux-Sxa"/>
                         <outlet property="pilotImageView" destination="Ndi-Yf-2QU" id="eaJ-Xx-jHA"/>
-                        <outlet property="searchForMake" destination="mEM-fz-bMX" id="ptk-AY-5QY"/>
                         <outlet property="yearPicker" destination="VrB-yr-Mze" id="amO-Yb-c3o"/>
                     </connections>
                 </viewController>

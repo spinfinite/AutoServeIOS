@@ -26,8 +26,8 @@ class ViewController: UIViewController, UIPickerViewDataSource,UISearchBarDelega
     
     @IBAction func didTapSubmit(_ sender: Any) {
         
-        let makeSearched = searchForMake.selectedScopeButtonIndex
-        print(makeSearched)
+//        let makeSearched = searchForMake.selectedScopeButtonIndex
+//        print(makeSearched)
         
         let makeSelected = makePicker.selectedRow(inComponent: 0)
         let makeValueSelected = makePickerData[makeSelected]
@@ -58,7 +58,7 @@ class ViewController: UIViewController, UIPickerViewDataSource,UISearchBarDelega
         
         api_manager.fetchMake()
         
-        self.searchForMake.delegate = self
+        //self.searchForMake.delegate = self
 
         
         self.makePicker.delegate = self
