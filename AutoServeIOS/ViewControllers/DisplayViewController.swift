@@ -63,7 +63,4 @@ class DisplayViewController: UIViewController, UITableViewDelegate, UITableViewD
         displayModelsTableView.delegate = self
     }
     
-
-
-
 }
